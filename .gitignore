@@ -1,0 +1,106 @@
+# dependencies
+node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+local-*
+
+# databases — custom.db IS tracked (committed to repo for GitHub workflow)
+# /db/*.db
+/prisma/db.sqlite
+
+# Internal tool artifacts
+/tool-results/
+/worklog.md
+
+# Downloaded/generated files
+/download/
+
+# Internal skills (not part of project)
+/skills/
+
+# Root-level research JSON files (not part of CRM source)
+/*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!next.config.ts
+!components.json
+!postcss.config.mjs
+!tailwind.config.ts
+!eslint.config.mjs
+!prisma/seed-data.json
+
+# Workspace utility scripts
+keepalive.sh
+server.js
+proxy-server.js
+start-crm.sh
+
+# bun lock (using npm)
+bun.lock
+
+# Artifacts and research files
+artifacts/
+agent*_results.txt
+new_agent*_results.txt
+generate_*.py
+*_report.md
+*_shops.txt
+optical_shops_complete_list.txt
+
+# Docker/deployment files (not needed for GitHub Pages)
+Caddyfile
+Dockerfile
+.dockerignore
+
+# Z-scripts (workspace internal)
+.zscripts/
+
+# Examples (not part of CRM)
+examples/
+
+# Mini-services (workspace internal)
+mini-services/
+
+# Upload directory
+upload/
+
+# Research/report markdown files at root
+/*.md
+!README.md

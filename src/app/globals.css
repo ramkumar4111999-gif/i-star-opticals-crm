@@ -1,0 +1,583 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Background & Foreground — clean slate-50 base */
+  --background: oklch(0.984 0.003 247.858);
+  --foreground: oklch(0.145 0.005 247.858);
+
+  /* Card */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0.005 247.858);
+
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0.005 247.858);
+
+  /* Primary — Emerald 600 */
+  --primary: oklch(0.596 0.145 163.225);
+  --primary-foreground: oklch(0.984 0.003 166.113);
+
+  /* Secondary — soft emerald tint */
+  --secondary: oklch(0.950 0.021 166.113);
+  --secondary-foreground: oklch(0.378 0.077 168.94);
+
+  /* Muted */
+  --muted: oklch(0.962 0.006 247.858);
+  --muted-foreground: oklch(0.521 0.015 247.858);
+
+  /* Accent — subtle emerald highlight */
+  --accent: oklch(0.950 0.038 162.48);
+  --accent-foreground: oklch(0.378 0.077 168.94);
+
+  /* Destructive */
+  --destructive: oklch(0.577 0.245 27.325);
+
+  /* Borders & inputs */
+  --border: oklch(0.916 0.005 247.858);
+  --input: oklch(0.916 0.005 247.858);
+  --ring: oklch(0.696 0.17 162.48);
+
+  /* Charts — emerald family palette */
+  --chart-1: oklch(0.696 0.17 162.48);
+  --chart-2: oklch(0.596 0.145 163.225);
+  --chart-3: oklch(0.508 0.118 165.612);
+  --chart-4: oklch(0.845 0.143 164.978);
+  --chart-5: oklch(0.432 0.095 166.913);
+
+  /* Sidebar */
+  --sidebar: oklch(0.145 0.02 163);
+  --sidebar-foreground: oklch(0.930 0.015 166.113);
+  --sidebar-primary: oklch(0.696 0.17 162.48);
+  --sidebar-primary-foreground: oklch(0.984 0.003 166.113);
+  --sidebar-accent: oklch(0.240 0.035 163);
+  --sidebar-accent-foreground: oklch(0.950 0.021 166.113);
+  --sidebar-border: oklch(0.260 0.025 163);
+  --sidebar-ring: oklch(0.696 0.17 162.48);
+}
+
+.dark {
+  /* Background & Foreground */
+  --background: oklch(0.130 0.012 163);
+  --foreground: oklch(0.962 0.006 247.858);
+
+  /* Card */
+  --card: oklch(0.185 0.016 163);
+  --card-foreground: oklch(0.962 0.006 247.858);
+
+  /* Popover */
+  --popover: oklch(0.185 0.016 163);
+  --popover-foreground: oklch(0.962 0.006 247.858);
+
+  /* Primary — Emerald 400 for dark mode */
+  --primary: oklch(0.765 0.177 163.223);
+  --primary-foreground: oklch(0.145 0.02 163);
+
+  /* Secondary */
+  --secondary: oklch(0.240 0.035 163);
+  --secondary-foreground: oklch(0.950 0.021 166.113);
+
+  /* Muted */
+  --muted: oklch(0.240 0.025 163);
+  --muted-foreground: oklch(0.650 0.025 166.113);
+
+  /* Accent */
+  --accent: oklch(0.260 0.045 163);
+  --accent-foreground: oklch(0.950 0.021 166.113);
+
+  /* Destructive */
+  --destructive: oklch(0.704 0.191 22.216);
+
+  /* Borders & inputs */
+  --border: oklch(0.300 0.025 163);
+  --input: oklch(0.300 0.025 163);
+  --ring: oklch(0.765 0.177 163.223);
+
+  /* Charts */
+  --chart-1: oklch(0.765 0.177 163.223);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.845 0.143 164.978);
+  --chart-4: oklch(0.596 0.145 163.225);
+  --chart-5: oklch(0.508 0.118 165.612);
+
+  /* Sidebar */
+  --sidebar: oklch(0.110 0.015 163);
+  --sidebar-foreground: oklch(0.930 0.015 166.113);
+  --sidebar-primary: oklch(0.765 0.177 163.223);
+  --sidebar-primary-foreground: oklch(0.110 0.015 163);
+  --sidebar-accent: oklch(0.200 0.03 163);
+  --sidebar-accent-foreground: oklch(0.930 0.015 166.113);
+  --sidebar-border: oklch(0.240 0.025 163);
+  --sidebar-ring: oklch(0.765 0.177 163.223);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styling */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.7 0.04 163);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.596 0.145 163.225);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: oklch(0.4 0.06 163);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.508 0.118 165.612);
+  }
+}
+
+/* ─── Glassmorphism Utilities ─── */
+.glass {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.dark .glass {
+  background-color: rgba(2, 6, 23, 0.72);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Hover Lift Effect ─── */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.1), 0 6px 12px -4px rgba(0, 0, 0, 0.06);
+}
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.4), 0 6px 12px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Shimmer Loading ─── */
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(5, 150, 105, 0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    margin: 15mm 12mm;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Make dialog content printable */
+  [role="dialog"] {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  [data-state="open"] > div {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide non-print elements */
+  header,
+  aside,
+  nav {
+    display: none !important;
+  }
+}
+
+/* Prevent body scroll when bottom sheet is open */
+body.sheet-open {
+  overflow: hidden;
+}
+
+/* Smoother section transitions */
+.section-enter {
+  animation: sectionFadeIn 0.25s ease-out;
+}
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrollbar for desktop */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.4);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(148, 163, 184, 0.6);
+  }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Global touch-target safety net ─── */
+/* Dialog footer buttons: ensure 44px minimum for all confirm/cancel actions */
+[data-slot="dialog-footer"] button {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* Pagination buttons */
+button[aria-label~="Previous"],
+button[aria-label~="Next"],
+button[aria-label~="previous"],
+button[aria-label~="next"] {
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* Drawer footer buttons */
+[data-slot="drawer-footer"] button {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* ─── Mobile UX Improvements ─── */
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better touch feedback for all interactive elements */
+@layer base {
+  button, a, [role="button"], [tabindex] {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Improved mobile card spacing */
+@media (max-width: 768px) {
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .hover-lift:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Mobile-optimized dialogs — full-width bottom sheet style */
+@media (max-width: 640px) {
+  [data-slot="dialog-content"] {
+    max-height: 92dvh !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    margin: auto 0 0 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    overscroll-behavior: contain;
+  }
+  [data-slot="dialog-header"] {
+    padding-top: calc(0.25rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* Safe area for notched phones — top */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Safe area for notched phones — bottom (used by bottom nav) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Better mobile table scroll — horizontal scrollable wrapper */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.8125rem;
+  }
+  th, td {
+    padding: 0.5rem 0.625rem !important;
+    white-space: nowrap;
+  }
+  /* Make table wrappers scroll horizontally on mobile */
+  [class*="overflow"] table,
+  .overflow-x-auto table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Extra small screens — tighter spacing */
+@media (max-width: 375px) {
+  .text-sm {
+    font-size: 0.8125rem !important;
+  }
+  .text-xs {
+    font-size: 0.6875rem !important;
+  }
+  .gap-2 {
+    gap: 0.375rem !important;
+  }
+  .gap-3 {
+    gap: 0.5rem !important;
+  }
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .px-6 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Smooth pull-to-refresh feel */
+@layer base {
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* Better bottom sheet on mobile */
+@media (max-width: 768px) {
+  [data-slot="drawer-content"] {
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+  }
+}
+
+/* Prevent text selection on nav/buttons */
+nav button, [role="tablist"] button, [role="navigation"] button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ─── Mobile Form Improvements ─── */
+@media (max-width: 640px) {
+  /* Stack form grids on mobile */
+  .grid-cols-2, [class*="grid-cols-"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Make form inputs taller for touch */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="search"],
+  select,
+  textarea {
+    min-height: 44px;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* ─── Mobile Chart Improvements ─── */
+@media (max-width: 640px) {
+  /* Make chart containers full width and shorter */
+  [class*="recharts-"] {
+    min-height: 200px;
+  }
+  .recharts-legend-item-text {
+    font-size: 11px !important;
+  }
+  .recharts-cartesian-axis-tick-value {
+    font-size: 10px !important;
+  }
+}
+
+/* ─── Mobile Card Grid Improvements ─── */
+@media (max-width: 640px) {
+  /* Single column cards on mobile */
+  [class*="grid-cols-2"] > [class*="Card"],
+  [class*="grid-cols-3"] > [class*="Card"],
+  [class*="grid-cols-4"] > [class*="Card"] {
+    grid-column: span 1 !important;
+  }
+}
+
+/* ─── Responsive Badge Stacking ─── */
+@media (max-width: 480px) {
+  .flex.items-center.gap-2 > .badge,
+  .flex.items-center.gap-2 > [class*="Badge"] {
+    flex-shrink: 0;
+  }
+}
+
+/* ─── Smooth scroll for anchor links on mobile ─── */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ─── Mobile Skeleton Improvements ─── */
+@media (max-width: 640px) {
+  [class*="Skeleton"] {
+    border-radius: 0.5rem;
+  }
+}
+
+/* ─── Landscape phone improvements ─── */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Reduce bottom nav height in landscape */
+  nav[class*="fixed bottom"] {
+    height: 48px !important;
+  }
+  nav[class*="fixed bottom"] > div {
+    height: 48px !important;
+  }
+}
+
+/* ─── Accessibility: reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .section-enter {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,276 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id            String   @id @default(cuid())
+  name          String
+  phone         String
+  email         String?
+  dob           DateTime?
+  address       String?
+  aadhar        String?
+  group         String   @default("New")
+  loyaltyPoints Int      @default(0)
+  totalSpent    Float    @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  prescriptions  Prescription[]
+  visits        Visit[]
+  sales         Sale[]
+  appointments  Appointment[]
+  dues          Due[]
+}
+
+model Prescription {
+  id          String   @id @default(cuid())
+  customerId  String
+  date        DateTime @default(now())
+  leftSPH     Float?
+  leftCYL     Float?
+  leftAXIS    Float?
+  leftPD      Float?
+  rightSPH    Float?
+  rightCYL    Float?
+  rightAXIS   Float?
+  rightPD     Float?
+  notes       String?
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+}
+
+model Visit {
+  id         String   @id @default(cuid())
+  customerId String
+  date       DateTime @default(now())
+  purpose    String?
+  notes      String?
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  name          String
+  category      String
+  brand         String?
+  model         String?
+  color         String?
+  size          String?
+  frameWidth    Int?
+  bridge        Int?
+  temple        Int?
+  price         Float
+  costPrice     Float?
+  stock         Int       @default(0)
+  minStock      Int       @default(5)
+  supplier      String?
+  supplierPhone String?
+  lastRestocked DateTime?
+  sku           String    @unique
+  barcode       String?
+  type          String?
+  duration      String?
+  expiryDate    DateTime?
+  description   String?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  saleItems     SaleItem[]
+}
+
+model Sale {
+  id            String   @id @default(cuid())
+  invoiceNo     String   @unique
+  customerId    String?
+  customer      Customer? @relation(fields: [customerId], references: [id])
+  subtotal      Float
+  discount      Float    @default(0)
+  cgst          Float    @default(0)
+  sgst          Float    @default(0)
+  igst          Float    @default(0)
+  totalAmount   Float
+  paymentMode   String   @default("Cash")
+  status        String   @default("Completed")
+  notes         String?
+  staffId       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  items         SaleItem[]
+  returns       Return[]
+}
+
+model SaleItem {
+  id        String  @id @default(cuid())
+  saleId    String
+  sale      Sale    @relation(fields: [saleId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  qty       Int
+  price     Float
+  total     Float
+}
+
+model Return {
+  id        String   @id @default(cuid())
+  saleId    String
+  sale      Sale     @relation(fields: [saleId], references: [id], onDelete: Cascade)
+  reason    String
+  amount    Float
+  status    String   @default("Pending")
+  createdAt DateTime @default(now())
+}
+
+model LabOrder {
+  id            String   @id @default(cuid())
+  customerId    String?
+  saleId        String?
+  lensType      String
+  leftSPH       Float?
+  leftCYL       Float?
+  leftAXIS      Float?
+  rightSPH      Float?
+  rightCYL      Float?
+  rightAXIS     Float?
+  leftPD        Float?
+  rightPD       Float?
+  frameId       String?
+  status        String   @default("Pending")
+  costPrice     Float    @default(0)
+  sellingPrice  Float    @default(0)
+  dueDate       DateTime?
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Appointment {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  date       DateTime
+  time       String?
+  purpose    String?
+  status     String   @default("Scheduled")
+  notes      String?
+  recurrence String?  // 'none', 'weekly', 'biweekly', 'monthly'
+  parentAppointmentId String? // for tracking recurring series
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Expense {
+  id          String   @id @default(cuid())
+  category    String
+  description String
+  amount      Float
+  date        DateTime @default(now())
+  vendor      String?
+  createdAt   DateTime @default(now())
+}
+
+model Due {
+  id         String  @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  amount     Float
+  paid       Float   @default(0)
+  status     String  @default("Pending")
+  dueDate    DateTime?
+  notes      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Staff {
+  id          String       @id @default(cuid())
+  name        String
+  phone       String
+  role        String       @default("Staff")
+  email       String?
+  salary      Float        @default(0)
+  commission  Float        @default(0)
+  isActive    Boolean      @default(true)
+  joinDate    DateTime?
+  loginId     String?      @unique
+  bankName    String?
+  bankAccount  String?
+  bankIfsc    String?
+  panNumber   String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  attendance  Attendance[]
+  salaryRecords SalaryRecord[]
+}
+
+model Attendance {
+  id        String    @id @default(cuid())
+  staffId   String
+  staff     Staff     @relation(fields: [staffId], references: [id], onDelete: Cascade)
+  clockIn   DateTime  @default(now())
+  clockOut  DateTime?
+  date      DateTime  @default(now())
+  notes     String?
+  createdAt DateTime  @default(now())
+}
+
+model SalaryRecord {
+  id            String   @id @default(cuid())
+  staffId       String
+  staff         Staff    @relation(fields: [staffId], references: [id], onDelete: Cascade)
+  month         String   // e.g. "2026-06"
+  basicSalary   Float
+  commission    Float
+  deductions    Float    @default(0)
+  advance       Float    @default(0)
+  netPay        Float
+  paidAt        DateTime?
+  status        String   @default("Pending") // Pending, Paid
+  notes         String?
+  createdAt     DateTime @default(now())
+}
+
+model Campaign {
+  id          String   @id @default(cuid())
+  name        String
+  type        String
+  message     String
+  status      String   @default("Planned")
+  budget      Float    @default(0)
+  reach       Int      @default(0)
+  targetGroup String?
+  scheduledAt DateTime?
+  sentCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String
+  type      String   @default("info")
+  isRead    Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+}
+
+model PurchaseOrder {
+  id            String   @id @default(cuid())
+  poNumber      String   @unique
+  supplier      String
+  supplierPhone String?
+  status        String   @default("Pending") // Pending, Ordered, PartiallyReceived, Received, Cancelled
+  items         String   // JSON array of { productId, name, qty, costPrice }
+  totalAmount   Float
+  receivedAt    DateTime?
+  notes         String?
+  expectedDate  DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
