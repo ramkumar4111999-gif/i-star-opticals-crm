@@ -165,6 +165,12 @@ export async function loadAllTables(): Promise<void> {
   isLoading = true;
   loadError = null;
 
+  // Wait for github-config.js to load (handles race with Next.js script queue)
+  for (let i = 0; i < 10; i++) {
+    if (getConfig()) break;
+    await new Promise(r => setTimeout(r, 100));
+  }
+
   const cfg = getConfig();
   console.log(`[GitHubDB] Loading data... (GitHub ${cfg ? 'connected' : 'not configured'})`);
 
