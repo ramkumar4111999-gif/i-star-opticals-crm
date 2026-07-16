@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     apple: "/logo.svg",
   },
   scripts: [
-    { src: "/i-star-opticals-crm/mock-api-init.js" },
+    { src: "/i-star-opticals-crm/github-config.js", strategy: "beforeInteractive" },
   ],
 };
 

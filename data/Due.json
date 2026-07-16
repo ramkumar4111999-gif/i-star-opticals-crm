@@ -1,0 +1,68 @@
+[
+  {
+    "id": "due_001",
+    "customerId": "cust_003",
+    "amount": 8000,
+    "paid": 5000,
+    "status": "Partial",
+    "dueDate": "2025-02-15T00:00:00.000Z",
+    "notes": "Wholesale order balance - promised by Feb 15",
+    "createdAt": "2026-06-11T03:05:55.497Z",
+    "updatedAt": "2026-06-11T03:05:55.497Z"
+  },
+  {
+    "id": "due_002",
+    "customerId": "cust_008",
+    "amount": 12000,
+    "paid": 0,
+    "status": "Pending",
+    "dueDate": "2025-01-30T00:00:00.000Z",
+    "notes": "Bifocal order for whole family - payment pending",
+    "createdAt": "2026-06-11T03:05:55.497Z",
+    "updatedAt": "2026-06-11T03:05:55.497Z"
+  },
+  {
+    "id": "due_003",
+    "customerId": "cust_009",
+    "amount": 3200,
+    "paid": 1500,
+    "status": "Partial",
+    "dueDate": "2025-02-05T00:00:00.000Z",
+    "notes": "Bifocal lens order - partial payment received",
+    "createdAt": "2026-06-11T03:05:55.498Z",
+    "updatedAt": "2026-06-11T03:05:55.498Z"
+  },
+  {
+    "id": "due_004",
+    "customerId": "cust_011",
+    "amount": 5200,
+    "paid": 0,
+    "status": "Overdue",
+    "dueDate": "2025-01-20T00:00:00.000Z",
+    "notes": "Photochromic lenses - followed up twice",
+    "createdAt": "2026-06-11T03:05:55.498Z",
+    "updatedAt": "2026-06-11T03:05:55.498Z"
+  },
+  {
+    "id": "due_005",
+    "customerId": "cust_012",
+    "amount": 15000,
+    "paid": 10000,
+    "status": "Partial",
+    "dueDate": "2025-02-28T00:00:00.000Z",
+    "notes": "Premium order - Oakley + Zeiss progressive",
+    "createdAt": "2026-06-11T03:05:55.498Z",
+    "updatedAt": "2026-06-11T03:05:55.498Z"
+  },
+  {
+    "id": "due_006",
+    "customerId": "cust_014",
+    "amount": 4900,
+    "paid": 0,
+    "status": "Pending",
+    "dueDate": "2025-02-10T00:00:00.000Z",
+    "notes": "Acuvue 6-month supply + cleaning kit",
+    "createdAt": "2026-06-11T03:05:55.499Z",
+    "updatedAt": "2026-06-11T03:05:55.499Z"
+  }
+]

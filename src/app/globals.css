@@ -581,3 +581,18 @@ nav button, [role="tablist"] button, [role="navigation"] button {
     scroll-behavior: auto !important;
   }
 }
+/* ─── GitHub DB Status Indicator ─── */
+.github-db-status {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+.github-db-status.connected {
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+}
+.github-db-status.local {
+  background: rgba(234, 179, 8, 0.1);
+  color: #ca8a04;
+}

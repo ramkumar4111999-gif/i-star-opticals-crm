@@ -900,6 +900,17 @@ function LoadingBar() {
 
 function TopBar() {
   const { activeSection, setSidebarOpen, darkMode, toggleDarkMode, setSettingsOpen, sidebarCollapsed, toggleSidebarCollapsed } = useCrmStore();
+  const [dbStatus, setDbStatus] = useState<'loading' | 'connected' | 'local'>('loading');
+
+  useEffect(() => {
+    const check = () => {
+      const cfg = window.__GITHUB_CRM_CONFIG__;
+      setDbStatus(cfg?.pat ? 'connected' : 'local');
+    };
+    check();
+    const t = setInterval(check, 3000);
+    return () => clearInterval(t);
+  }, []);
 
   const currentLabel = NAV_ITEMS.find((n) => n.key === activeSection)?.label ?? 'Dashboard';
 
@@ -936,6 +947,19 @@ function TopBar() {
         <span className="hidden sm:inline-flex items-center text-xs text-muted-foreground bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full font-medium">
           {new Date().toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' })}
         </span>
+        {/* GitHub DB Status */}
+        {dbStatus === 'connected' && (
+          <span className="github-db-status connected hidden sm:inline-flex items-center gap-1">
+            <Database className="h-3 w-3" />
+            Live
+          </span>
+        )}
+        {dbStatus === 'local' && (
+          <span className="github-db-status local hidden sm:inline-flex items-center gap-1">
+            <Database className="h-3 w-3" />
+            Local
+          </span>
+        )}
       </div>
 
       <div className="flex-1" />

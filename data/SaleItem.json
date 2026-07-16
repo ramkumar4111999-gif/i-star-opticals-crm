@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cmq8x10ye0001oylvc0ezkhpv",
+    "saleId": "sale_001",
+    "productId": "prod_002",
+    "qty": 1,
+    "price": 3200,
+    "total": 3200
+  },
+  {
+    "id": "cmq8x10ye0002oylvdcdl4a3i",
+    "saleId": "sale_001",
+    "productId": "prod_009",
+    "qty": 1,
+    "price": 2500,
+    "total": 2500
+  },
+  {
+    "id": "cmq8x10ye0003oylvg5wingif",
+    "saleId": "sale_001",
+    "productId": "prod_027",
+    "qty": 1,
+    "price": 120,
+    "total": 120
+  },
+  {
+    "id": "cmq8x10yf0005oylvtfl97e27",
+    "saleId": "sale_002",
+    "productId": "prod_017",
+    "qty": 2,
+    "price": 1800,
+    "total": 3600
+  },
+  {
+    "id": "cmq8x10yf0006oylvulep79sm",
+    "saleId": "sale_002",
+    "productId": "prod_026",
+    "qty": 1,
+    "price": 350,
+    "total": 350
+  },
+  {
+    "id": "cmq8x10yg0008oylvbwl0dv6z",
+    "saleId": "sale_003",
+    "productId": "prod_004",
+    "qty": 10,
+    "price": 1200,
+    "total": 12000
+  },
+  {
+    "id": "cmq8x10yg0009oylv89x8lthr",
+    "saleId": "sale_003",
+    "productId": "prod_006",
+    "qty": 10,
+    "price": 950,
+    "total": 9500
+  },
+  {
+    "id": "cmq8x10yh000boylvjzgtdbpl",
+    "saleId": "sale_004",
+    "productId": "prod_001",
+    "qty": 1,
+    "price": 3500,
+    "total": 3500
+  },
+  {
+    "id": "cmq8x10yh000coylvs06n6vmu",
+    "saleId": "sale_004",
+    "productId": "prod_012",
+    "qty": 1,
+    "price": 3800,
+    "total": 3800
+  },
+  {
+    "id": "cmq8x10yi000eoylv8mqfs3lw",
+    "saleId": "sale_005",
+    "productId": "prod_003",
+    "qty": 1,
+    "price": 1800,
+    "total": 1800
+  },
+  {
+    "id": "cmq8x10yi000foylvqua9nbjf",
+    "saleId": "sale_005",
+    "productId": "prod_009",
+    "qty": 1,
+    "price": 2500,
+    "total": 2500
+  },
+  {
+    "id": "cmq8x10yi000hoylvozutd1tk",
+    "saleId": "sale_006",
+    "productId": "prod_008",
+    "qty": 1,
+    "price": 4200,
+    "total": 4200
+  },
+  {
+    "id": "cmq8x10yi000ioylv0bk35ixo",
+    "saleId": "sale_006",
+    "productId": "prod_011",
+    "qty": 1,
+    "price": 5500,
+    "total": 5500
+  },
+  {
+    "id": "cmq8x10yj000koylvxc5jlof1",
+    "saleId": "sale_007",
+    "productId": "prod_022",
+    "qty": 1,
+    "price": 4800,
+    "total": 4800
+  },
+  {
+    "id": "cmq8x10yj000loylv42pqhew9",
+    "saleId": "sale_007",
+    "productId": "prod_028",
+    "qty": 1,
+    "price": 150,
+    "total": 150
+  },
+  {
+    "id": "cmq8x10yk000noylv798t0rrw",
+    "saleId": "sale_008",
+    "productId": "prod_018",
+    "qty": 3,
+    "price": 1500,
+    "total": 4500
+  },
+  {
+    "id": "cmq8x10yk000ooylvef49le4h",
+    "saleId": "sale_008",
+    "productId": "prod_025",
+    "qty": 1,
+    "price": 280,
+    "total": 280
+  },
+  {
+    "id": "cmq8x10yk000poylve7uuxz0p",
+    "saleId": "sale_008",
+    "productId": "prod_027",
+    "qty": 1,
+    "price": 120,
+    "total": 120
+  }
+]

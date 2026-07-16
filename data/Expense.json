@@ -1,0 +1,119 @@
+[
+  {
+    "id": "exp_001",
+    "category": "Rent",
+    "description": "Shop rent for January 2025",
+    "amount": 25000,
+    "date": "2025-01-05T00:00:00.000Z",
+    "vendor": "Lakshmi Properties",
+    "createdAt": "2026-06-11T03:05:55.492Z"
+  },
+  {
+    "id": "exp_002",
+    "category": "Salary",
+    "description": "Staff salary - January 2025 (Ravi - Optometrist)",
+    "amount": 18000,
+    "date": "2025-01-31T00:00:00.000Z",
+    "vendor": "Ravi Kumar",
+    "createdAt": "2026-06-11T03:05:55.493Z"
+  },
+  {
+    "id": "exp_003",
+    "category": "Salary",
+    "description": "Staff salary - January 2025 (Selvi - Sales)",
+    "amount": 12000,
+    "date": "2025-01-31T00:00:00.000Z",
+    "vendor": "Selvi M",
+    "createdAt": "2026-06-11T03:05:55.493Z"
+  },
+  {
+    "id": "exp_004",
+    "category": "Inventory",
+    "description": "Monthly stock purchase - Essilor lenses batch",
+    "amount": 45000,
+    "date": "2025-01-10T00:00:00.000Z",
+    "vendor": "Essilor India Pvt Ltd",
+    "createdAt": "2026-06-11T03:05:55.493Z"
+  },
+  {
+    "id": "exp_005",
+    "category": "Inventory",
+    "description": "Ray-Ban frames - new collection Q1 2025",
+    "amount": 35000,
+    "date": "2025-01-15T00:00:00.000Z",
+    "vendor": "Luxottica India",
+    "createdAt": "2026-06-11T03:05:55.494Z"
+  },
+  {
+    "id": "exp_006",
+    "category": "Electricity",
+    "description": "Electricity bill - December 2024",
+    "amount": 4200,
+    "date": "2025-01-08T00:00:00.000Z",
+    "vendor": "TNEB",
+    "createdAt": "2026-06-11T03:05:55.494Z"
+  },
+  {
+    "id": "exp_007",
+    "category": "Maintenance",
+    "description": "Lens edger machine servicing",
+    "amount": 3500,
+    "date": "2025-01-12T00:00:00.000Z",
+    "vendor": "Nidek Service Center",
+    "createdAt": "2026-06-11T03:05:55.494Z"
+  },
+  {
+    "id": "exp_008",
+    "category": "Marketing",
+    "description": "Pamphlet printing - 500 copies for Pongal offer",
+    "amount": 2800,
+    "date": "2025-01-13T00:00:00.000Z",
+    "vendor": "Sri Lakshmi Printers",
+    "createdAt": "2026-06-11T03:05:55.495Z"
+  },
+  {
+    "id": "exp_009",
+    "category": "Marketing",
+    "description": "Facebook & Instagram ads - January",
+    "amount": 5000,
+    "date": "2025-01-01T00:00:00.000Z",
+    "vendor": "Meta Ads",
+    "createdAt": "2026-06-11T03:05:55.495Z"
+  },
+  {
+    "id": "exp_010",
+    "category": "Logistics",
+    "description": "Courier charges for lab orders (monthly)",
+    "amount": 1500,
+    "date": "2025-01-20T00:00:00.000Z",
+    "vendor": "Delhivery",
+    "createdAt": "2026-06-11T03:05:55.495Z"
+  },
+  {
+    "id": "exp_011",
+    "category": "Office Supplies",
+    "description": "Receipt books, prescription pads, visiting cards",
+    "amount": 1800,
+    "date": "2025-01-18T00:00:00.000Z",
+    "vendor": "Kumaran Stores",
+    "createdAt": "2026-06-11T03:05:55.496Z"
+  },
+  {
+    "id": "exp_012",
+    "category": "Rent",
+    "description": "Shop rent for February 2025",
+    "amount": 25000,
+    "date": "2025-02-05T00:00:00.000Z",
+    "vendor": "Lakshmi Properties",
+    "createdAt": "2026-06-11T03:05:55.496Z"
+  },
+  {
+    "id": "cmqb7qhmf0001mzr51zngfkz1",
+    "category": "Test",
+    "description": "audit test",
+    "amount": 50,
+    "date": "2026-06-12T17:41:11.990Z",
+    "vendor": null,
+    "createdAt": "2026-06-12T17:41:11.992Z"
+  }
+]

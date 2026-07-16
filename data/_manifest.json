@@ -1,0 +1,19 @@
+{
+  "Customer": 16,
+  "Prescription": 5,
+  "Visit": 8,
+  "Product": 28,
+  "Sale": 8,
+  "SaleItem": 18,
+  "Return": 0,
+  "LabOrder": 6,
+  "Appointment": 5,
+  "Expense": 13,
+  "Due": 6,
+  "Staff": 1,
+  "Attendance": 0,
+  "SalaryRecord": 0,
+  "Campaign": 0,
+  "Notification": 0,
+  "PurchaseOrder": 0
+}

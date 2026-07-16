@@ -1,0 +1,67 @@
+[
+  {
+    "id": "appt_001",
+    "customerId": "cust_013",
+    "date": "2026-06-11T10:00:00.000Z",
+    "time": null,
+    "purpose": "Eye Check-up",
+    "status": "Scheduled",
+    "notes": "New patient - walk-in enquiry last week",
+    "recurrence": null,
+    "parentAppointmentId": null,
+    "createdAt": "2026-06-11T03:05:55.489Z",
+    "updatedAt": "2026-06-11T03:05:55.489Z"
+  },
+  {
+    "id": "appt_002",
+    "customerId": "cust_007",
+    "date": "2026-06-11T14:30:00.000Z",
+    "time": null,
+    "purpose": "Contact Lens Trial",
+    "status": "Confirmed",
+    "notes": "Wants to switch from glasses to contact lenses",
+    "recurrence": null,
+    "parentAppointmentId": null,
+    "createdAt": "2026-06-11T03:05:55.490Z",
+    "updatedAt": "2026-06-11T03:05:55.490Z"
+  },
+  {
+    "id": "appt_003",
+    "customerId": "cust_010",
+    "date": "2026-06-11T16:00:00.000Z",
+    "time": null,
+    "purpose": "Follow-up",
+    "status": "Scheduled",
+    "notes": "Post-delivery follow-up for progressive lenses",
+    "recurrence": null,
+    "parentAppointmentId": null,
+    "createdAt": "2026-06-11T03:05:55.491Z",
+    "updatedAt": "2026-06-11T03:05:55.491Z"
+  },
+  {
+    "id": "appt_004",
+    "customerId": "cust_015",
+    "date": "2026-06-13T03:05:55.489Z",
+    "time": null,
+    "purpose": "Annual Eye Exam",
+    "status": "Scheduled",
+    "notes": "Regular annual check-up customer",
+    "recurrence": null,
+    "parentAppointmentId": null,
+    "createdAt": "2026-06-11T03:05:55.491Z",
+    "updatedAt": "2026-06-11T03:05:55.491Z"
+  },
+  {
+    "id": "appt_005",
+    "customerId": "cust_009",
+    "date": "2026-06-16T03:05:55.489Z",
+    "time": null,
+    "purpose": "Bifocal Consultation",
+    "status": "Scheduled",
+    "notes": "Patient prescribed bifocals. Lab order placed.",
+    "recurrence": null,
+    "parentAppointmentId": null,
+    "createdAt": "2026-06-11T03:05:55.491Z",
+    "updatedAt": "2026-06-11T03:05:55.491Z"
+  }
+]

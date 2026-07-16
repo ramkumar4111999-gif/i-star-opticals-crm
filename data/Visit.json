@@ -1,0 +1,66 @@
+[
+  {
+    "id": "visit_001",
+    "customerId": "cust_001",
+    "date": "2025-01-05T00:00:00.000Z",
+    "purpose": "Eye Examination",
+    "notes": "Regular annual check-up",
+    "createdAt": "2026-06-11T03:05:55.502Z"
+  },
+  {
+    "id": "visit_002",
+    "customerId": "cust_002",
+    "date": "2025-01-08T00:00:00.000Z",
+    "purpose": "Contact Lens Fitting",
+    "notes": "First-time contact lens user, taught insertion/removal",
+    "createdAt": "2026-06-11T03:05:55.503Z"
+  },
+  {
+    "id": "visit_003",
+    "customerId": "cust_003",
+    "date": "2025-01-10T00:00:00.000Z",
+    "purpose": "Bulk Order Discussion",
+    "notes": "Discussed wholesale rates for Q1 2025",
+    "createdAt": "2026-06-11T03:05:55.503Z"
+  },
+  {
+    "id": "visit_004",
+    "customerId": "cust_004",
+    "date": "2025-01-12T00:00:00.000Z",
+    "purpose": "Frame Selection",
+    "notes": "Selected Ray-Ban Aviator, prefers lightweight frames",
+    "createdAt": "2026-06-11T03:05:55.504Z"
+  },
+  {
+    "id": "visit_005",
+    "customerId": "cust_005",
+    "date": "2025-01-15T00:00:00.000Z",
+    "purpose": "Eye Examination",
+    "notes": "Complaints of headaches after computer use",
+    "createdAt": "2026-06-11T03:05:55.504Z"
+  },
+  {
+    "id": "visit_006",
+    "customerId": "cust_006",
+    "date": "2025-01-18T00:00:00.000Z",
+    "purpose": "Progressive Consultation",
+    "notes": "Difficulty reading small print, progressive recommended",
+    "createdAt": "2026-06-11T03:05:55.505Z"
+  },
+  {
+    "id": "visit_007",
+    "customerId": "cust_010",
+    "date": "2025-01-20T00:00:00.000Z",
+    "purpose": "Glasses Delivery",
+    "notes": "Picked up Ray-Ban Clubmaster, satisfied with fit",
+    "createdAt": "2026-06-11T03:05:55.505Z"
+  },
+  {
+    "id": "visit_008",
+    "customerId": "cust_014",
+    "date": "2025-01-22T00:00:00.000Z",
+    "purpose": "Contact Lens Refill",
+    "notes": "Acuvue Oasys - 3 boxes, 6-month supply",
+    "createdAt": "2026-06-11T03:05:55.505Z"
+  }
+]

@@ -1,7 +1,6 @@
 # ─────────────────────────────────────────────────────────────────
 # i Star Opticals CRM — Build & Deploy to GitHub Pages
-# Uses GitHub Secrets for all sensitive data (no exposed .env)
-# PAT_TOKEN stored securely as repository secret
+# GitHub IS the database: PAT injected at build time for CRUD
 # ─────────────────────────────────────────────────────────────────
 
 name: Deploy CRM to GitHub Pages
@@ -12,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,13 +23,9 @@ env:
   NODE_VERSION: "20"
 
 jobs:
-  # ─── JOB 1: Install & Build ───────────────────────────────────
   build:
-    name: "Build Static Site"
+    name: "Build & Inject Config"
     runs-on: ubuntu-latest
-    env:
-      # PAT available for any authenticated API calls during build
-      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,8 +42,18 @@ jobs:
       - name: Generate Prisma Client
         run: npx prisma generate
 
-      - name: Export database to JSON
-        run: node scripts/export-db-to-json.mjs
+      # ─── Inject GitHub config with PAT for live CRUD ───
+      - name: Inject GitHub DB config
+        run: |
+          cat > public/github-config.js << 'CONFIGEOF'
+          window.__GITHUB_CRM_CONFIG__ = {
+            owner: 'ramkumar4111999-gif',
+            repo: 'i-star-opticals-crm',
+            pat: '${{ secrets.PAT_TOKEN }}',
+            branch: 'main'
+          };
+          CONFIGEOF
+          echo "✅ GitHub DB config injected"
 
       - name: Build Next.js static site
         run: npx next build
@@ -58,7 +63,6 @@ jobs:
         with:
           path: ./out
 
-  # ─── JOB 2: Deploy to GitHub Pages ───────────────────────────
   deploy:
     name: "Deploy to Pages"
     needs: build

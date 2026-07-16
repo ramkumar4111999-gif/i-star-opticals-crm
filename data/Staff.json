@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cmqb7qho90002mzr5jwhxyup5",
+    "name": "_test",
+    "phone": "8888888888",
+    "role": "Optometrist",
+    "email": null,
+    "salary": 0,
+    "commission": 0,
+    "isActive": true,
+    "joinDate": "2026-06-12T17:41:12.056Z",
+    "loginId": null,
+    "bankName": null,
+    "bankAccount": null,
+    "bankIfsc": null,
+    "panNumber": null,
+    "createdAt": "2026-06-12T17:41:12.057Z",
+    "updatedAt": "2026-06-12T17:41:12.057Z"
+  }
+]
