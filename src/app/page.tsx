@@ -46,6 +46,8 @@ import { CrmProvider, useCrmStore, type SectionKey } from '@/components/crm/stor
 import { getSettings, saveSettings, type CrmSettings } from '@/lib/settings';
 import { toast } from 'sonner';
 import { ErrorBoundary } from '@/components/error-boundary';
+import LoginScreen from '@/components/login-screen';
+import { isLoggedIn, logout, getStoredUsername } from '@/lib/auth';
 import Dashboard from '@/components/crm/dashboard';
 import Customers from '@/components/crm/customers';
 import Inventory from '@/components/crm/inventory';
@@ -993,6 +995,17 @@ function TopBar() {
         )}
       </Button>
 
+      {/* Logout */}
+      <Button
+        variant="ghost"
+        size="icon"
+        className="shrink-0 h-11 w-11 lg:h-10 lg:w-10 min-w-[44px] min-h-[44px] touch-manipulation text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400"
+        onClick={() => { logout(); window.location.reload(); }}
+        aria-label="Logout"
+      >
+        <LogOut className="h-4.5 w-4.5" />
+      </Button>
+
       {/* Notifications */}
       <Notifications />
     </header>
@@ -1291,6 +1304,26 @@ function CrmLayout() {
 
 export default function Home() {
   useMockApiFallback();
+  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: check localStorage on mount to gate login
+    setAuthenticated(isLoggedIn());
+  }, []);
+
+  // Show nothing until we've checked localStorage (avoids flash)
+  if (authenticated === null) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-white dark:bg-slate-950">
+        <Loader className="h-8 w-8 animate-spin text-emerald-600" />
+      </div>
+    );
+  }
+
+  if (!authenticated) {
+    return <LoginScreen onLogin={() => setAuthenticated(true)} />;
+  }
+
   return (
     <CrmProvider>
       <CrmLayout />
